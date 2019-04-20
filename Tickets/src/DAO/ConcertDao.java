@@ -1,43 +1,39 @@
 package DAO;
 
-import Shows.Concert;
+import shows.Concert;
 
-import java.util.Date;
-import java.util.Set;
+import java.util.ArrayList;
 
 public class ConcertDao {
 
-    private Concert concertList[];
-    public void addConcert(String name, Date data, float price, int noSeatsAvailable, boolean vip){
-        Concert crt = new Concert(name, data, price, noSeatsAvailable, vip);
-        Concert[] aux = new Concert[concertList.length + 1];
-        for(int i = 0; i < concertList.length; i++)
-        {
-            aux[i] = concertList[i];
-        }
-        aux[concertList.length] = crt;
-        concertList = aux;
+    private ArrayList<Concert> concertList = new ArrayList<>();
+
+    public ArrayList<Concert> getConcertList() {
+        return concertList;
+    }
+    @Override
+    public String toString() {
+        return "ConcertDao{" +
+                "concertList=" + concertList +
+                '}';
     }
 
-    public void deleteConcert(String name)
+    public void addConcert(Concert newConcert){
+        concertList.add(newConcert);
+    }
+
+    public void deleteConcert(Concert toDelete)
     {
-
-        for(int i = 0; i < concertList.length; i++)
-        {
-            if (concertList[i].getName().equals(name))
-            {
-                concertList[i] = null;
-            }
-        }
+        concertList.remove(toDelete);
     }
+
     public Concert searchConcert(String name)
     {
+        int i;
+        for(i = 0; i < concertList.size(); i++)
+            if(concertList.get(i).getName().equals(name))
+                return concertList.get(i);
 
-        for(int i = 0; i < concertList.length;i++)
-            if (concertList[i].getName().equals(name))
-            {
-                return concertList[i];
-            }
         return null;
     }
 }

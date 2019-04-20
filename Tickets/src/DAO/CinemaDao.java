@@ -1,63 +1,41 @@
 package DAO;
 
-import Shows.Cinema;
+import shows.Cinema;
 
-import java.util.Date;
+import java.util.ArrayList;
 
 public class CinemaDao {
-    private Cinema cinemaList[];
 
-    public CinemaDao()
-    { cinemaList = new Cinema[1]; }
+    private ArrayList<Cinema> cinemaList = new ArrayList<>();
 
-    public void addMovie(String name, Date data, float price, int noSeatsAvailable, String location, boolean glass_3d)
-    {
-        int ok = 0;
-        Cinema nou = new Cinema(name, data, price, noSeatsAvailable, location, glass_3d);
-        Cinema[] aux = new Cinema[cinemaList.length + 1];
-        for(int i = 0; i < cinemaList.length; i++)
-        {
-            aux[i] = new Cinema();
-            if(cinemaList[i] == null && ok == 0)
-            {
-                cinemaList[i] = nou;
-                ok = 1; //am gasit o pozitie null pe care sa adaug noul teatru
-                break;
-            }
-            else
-            {
-                aux[i] = cinemaList[i];
-            }
-        }
-
-        if(ok == 0) //daca nu am gasit o pozitie null pe care sa adaug
-        {
-            aux[cinemaList.length] = nou;
-            cinemaList = aux;
-        }
+    public ArrayList<Cinema> getCinemaList() {
+        return cinemaList;
+    }
+    @Override
+    public String toString() {
+        return "CinemaDao{" +
+                "cinemaList=" + cinemaList +
+                '}';
     }
 
-    public void deleteMovie(String name)
-    {
 
-        for(int i = 0; i < cinemaList.length; i++)
-        {
-            if (cinemaList[i].getName().equals(name))
-            {
-                cinemaList[i] = null;
-            }
-        }
+    public void addMovie(Cinema movie)
+    {
+        cinemaList.add(movie);
     }
 
-    public Cinema SearchMovie(String movie)
+    public void deleteMovie(Cinema movie)
     {
-        for(int i = 0; i < cinemaList.length; i++)
-        {
-            if(cinemaList[i].getName().equals(movie))
-            {
-                return cinemaList[i];
-            }
-        }
+        cinemaList.remove(movie);
+    }
+
+    public Cinema searchMovie(String name)
+    {
+        int i;
+        for(i = 0; i < cinemaList.size(); i++)
+            if(cinemaList.get(i).getName().equals(name))
+                return cinemaList.get(i);
+
         return null;
     }
 }
