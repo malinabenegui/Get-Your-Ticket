@@ -18,7 +18,6 @@ public class CinemaDao {
                 '}';
     }
 
-
     public void addMovie(Cinema movie)
     {
         cinemaList.add(movie);

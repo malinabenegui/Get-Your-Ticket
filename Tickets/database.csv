@@ -1,4 +1,30 @@
-Cinema,sabrina,march,200,afi,true,25.0
-Theatre,Romeo,march,200,national,false,40.0
-Theatre,Scrisoarea,1,400,Teatrul,false,40.0
-Concert,neversea,march,mamaia,true,200.0
+Cinema,Avengers,2019-06-07 20:30,300,Afi,true,30.0
+
+Cinema,Shape of water,2019-08-14 19:00,230,MegaMall 4DX,true,20.0
+
+Cinema,Patrocle,2019-06-18 19:30,150,Cinema Lipscani,false,10.0
+
+Cinema,Love Story,2019-08-12,300,Afi Park,false,21.0
+
+Theatre,Romeo and Jiuliet,2019-06-15 18:00,600,Cuibul Artistilor,false,40.0
+
+Theatre,No Man's Land,2019-07-06 18:00,700,Teatrul National,true,60.0
+
+Theatre,Pacientul,2019-08-15 18:30,300,Teatrul,true,50.0
+
+Theatre,Cetateanul Turmentat,2019-07-06 18:00,700,Teatru Lipscani,false,60.0
+
+Concert,Ed Sheeran,2019-07-03 19:00,Arena Nationala,true,100.0
+
+Concert,Maroon 5,2019-08-17 20:00,Arenele Romane,true,200.0
+
+Concert,One Republic,2019-07-15 20:00,Romexpo,true,100.0
+
+Concert,One Republic,2019-07-15 20:00,Romexpo,true,100.0
+
+Concert,One Republic,2019-07-17 20:00,Romexpo,true,100.0
+
+Concert,One Republic,2019-08-01 20:00,Romexpo,true,100.0
+
+Concert,Sia,2019-07-30 19:00,Sala Palatului,false,140.0
+

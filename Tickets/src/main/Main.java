@@ -10,6 +10,7 @@ import shows.Theatre;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import static java.lang.Boolean.parseBoolean;
@@ -21,7 +22,7 @@ public class Main {
     protected static ConcertDao conc = new ConcertDao();
     protected static TheatreDao theatre = new TheatreDao();
 
-    public static void main(String[] args) throws IOException
+    public static void main(String[] args) throws IOException, SQLException //importing shows from database
     {
         FileReader fileReader = new FileReader("database.csv");
         BufferedReader bufferedReader = new BufferedReader(fileReader);

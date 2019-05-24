@@ -5,6 +5,7 @@ import shows.Theatre;
 import java.util.ArrayList;
 
 public class TheatreDao {
+
     private ArrayList<Theatre> theatreList = new ArrayList<>();
 
     public ArrayList<Theatre> getTheatreList() {

@@ -30,7 +30,7 @@ public class Log {
             printWriter = new PrintWriter(bufferedWriter);
 
             Timestamp time = new Timestamp(System.currentTimeMillis());
-            printWriter.println(action + "," + time);
+            printWriter.println(action + "," + time + "," + Thread.currentThread().getName());
         }
         catch (Exception e){
             e.printStackTrace();
@@ -44,8 +44,5 @@ public class Log {
                 e.printStackTrace();
             }
         }
-
-
-
     }
 }

@@ -24,16 +24,16 @@ public class Concert extends Shows {
                 data + "," +
                 location + "," +
                 vip + "," +
-                price;
+                price + "\n";
     }
 
-    public float calculatePrice(String clientType)
+    public float calculatePrice(String clientType, boolean vip)
     {
         float ticketPrice = 0;
         if(clientType.toLowerCase().equals("student"))
-            ticketPrice = price - 20*price / 100;
+            ticketPrice = price - (20*price / 100);
         else if(clientType.toLowerCase().equals("retired"))
-            ticketPrice = price - 10*ticketPrice / 100;
+            ticketPrice = price - (10*ticketPrice / 100);
         else if(clientType.toLowerCase().equals("child"))
             ticketPrice = price - 70*ticketPrice / 100;
         else
@@ -47,9 +47,5 @@ public class Concert extends Shows {
 
     public boolean isVip() {
         return vip;
-    }
-
-    public void setVip(boolean vip) {
-        this.vip = vip;
     }
 }

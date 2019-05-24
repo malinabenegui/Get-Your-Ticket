@@ -27,18 +27,18 @@ public class Theatre extends Shows {
                 seatsAvailable + "," +
                 location + "," +
                 loja + "," +
-                price;
+                price + "\n";
     }
 
-    public float calculatePrice(String clientType)
+    public float calculatePrice(String clientType, boolean loja)
     {
         float ticketPrice = 0;
         if(clientType.toLowerCase().equals("student"))
-            ticketPrice = price - 30*price / 100;
+            ticketPrice = price - (30*price / 100);
         else if(clientType.toLowerCase().equals("retired"))
-            ticketPrice = price - 40*price / 100;
+            ticketPrice = price - (40*price / 100);
         else if(clientType.toLowerCase().equals("child"))
-            ticketPrice = price - 10*price / 100;
+            ticketPrice = price - (10*price / 100);
         else ticketPrice = price; //for adult
 
         if(loja == true)
@@ -49,9 +49,5 @@ public class Theatre extends Shows {
 
     public boolean isLoja() {
         return loja;
-    }
-
-    public void setLoja(boolean loja) {
-        this.loja = loja;
     }
 }
